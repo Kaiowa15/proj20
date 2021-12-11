@@ -20,10 +20,8 @@ function preload()
 
 function setup() {
 	createCanvas(400, 400);
-
-
 	engine = Engine.create();
-	world = Engine.world;
+	world = engine.world;
 
 	//Crie os Corpos Aqui.
     var block1_options = {
@@ -54,16 +52,16 @@ function setup() {
 
 
 	plane = Bodies.rectangle(200,390,400,20,plane_options);
-	 world.add(world,plane);
+	 World.add(world,plane);
    
-	 block2 = Bodies.rectangle(220,10,10,block2_options);
-	 world.add(world,block2);
+	 block2 = Bodies.rectangle(220,210,40,20,block2_options);
+	 World.add(world,block2);
    
-	 block1 = Bodies.circle(110,50,10,10,block1_options);
-	 world.add(world,block1);
+	 block1 = Bodies.circle(110,370,20,block1_options);
+	 World.add(world,block1);
    
-	 block3 = Bodies.rectangle(350,50,10,10,block3_options);
-	 world.add(world,block3);
+	 block3 = Bodies.rectangle(350,350,20,20,block3_options);
+	 World.add(world,block3);
    
 
 
@@ -79,9 +77,9 @@ function draw() {
   rectMode(CENTER);
   ellipseMode(RADIUS);
 
-  ellipse(block1.position.x,block1.position.y,10)
-  rect(block2.position.x,block2.position.y,10,10)
-  rect(block3.position.x,block3.position.y,10,10);
+  ellipse(block1.position.x,block1.position.y,20)
+  rect(block2.position.x,block2.position.y,40,10)
+  rect(block3.position.x,block3.position.y,20,20);
   rect(ground.position.x,ground.position.y,400,20);
 
 }
